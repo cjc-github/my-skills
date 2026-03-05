@@ -234,5 +234,16 @@
       ".cursor/skills/pdf-to-markdown"
     ],
     "分支": "main"
+  },
+  {
+    "序号": 23,
+    "hash": "0076e8d",
+    "时间": "2026-03-05",
+    "信息": "【第23次提交】构建维护（忽略规则）：新增 .gitignore 管理依赖与文档转换产物",
+    "修改文件": [
+      ".gitignore",
+      ".agents/skills/html-to-pdf/package-lock.json"
+    ],
+    "分支": "main"
   }
 ]

@@ -1,0 +1,46 @@
+########################
+# 通用忽略
+########################
+
+# 依赖与缓存
+node_modules/
+npm-debug.log*
+pnpm-lock.yaml
+yarn.lock
+.DS_Store
+Thumbs.db
+
+########################
+# 构建/工具产物
+########################
+
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+########################
+# 文档与 Skill 相关产物
+########################
+# 说明：
+# - 仓库中以 Markdown (*.md) 为「源文件」
+# - 由各类 Skill 生成的 HTML / PDF / 图片 / 临时 Markdown 等视为「派生文件」，默认不纳入版本控制
+
+# Markdown 转 HTML 生成的文件（例如 README.html 等）
+*.html
+
+# html-to-pdf 生成的文档
+*.pdf
+
+# pdf-to-images 生成的图片
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# pdf-to-markdown 生成的中间/备份 Markdown
+*.md.bak
+*.md.tmp
+*.md.generated
+
