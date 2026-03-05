@@ -1,0 +1,16 @@
+---
+description: 执行 git 提交时自动调用提交记录追踪规范
+alwaysApply: true
+---
+
+# Git 提交规范
+
+每次执行 git 提交前，必须先读取并遵循以下 Skill 文件中定义的完整流程：
+
+**Skill 文件路径**：`skills/commit_log.md`
+
+核心要求：
+- Commit message **全部使用中文**，格式为 `【第N次提交】<类型>（<范围>）：<描述>`
+- 提交前用 `git rev-list --count HEAD` 查询当前提交总数，计算本次序号
+- 提交成功后，将提交信息追加写入仓库根目录的 `commit_history.json`
+- 向用户输出提交摘要（序号、Hash、修改文件数）

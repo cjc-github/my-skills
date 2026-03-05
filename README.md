@@ -6,8 +6,13 @@
 
 ```
 my-skills/
-├── README.md       # 项目说明
-└── skills/         # 技能存放目录
+├── README.md              # 项目说明
+├── commit_history.json    # 提交历史记录（自动生成）
+├── .cursor/
+│   └── rules/
+│       └── git-commit.mdc # git 提交规范（自动触发）
+└── skills/
+    └── commit_log.md      # 提交记录追踪 Skill
 ```
 
 ## skills 目录
