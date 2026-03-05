@@ -38,5 +38,21 @@
     "信息": "【第5次提交】文档更新（README）：完善项目说明，新增 Skills 和 Rules 对照表及工作流程描述",
     "修改文件": ["README.md"],
     "分支": "main"
+  },
+  {
+    "序号": 6,
+    "hash": "fbd5e0b",
+    "时间": "2026-03-05",
+    "信息": "【第6次提交】文档更新（提交历史）：补录第4、5次提交记录至 commit_history.json",
+    "修改文件": ["commit_history.json"],
+    "分支": "main"
+  },
+  {
+    "序号": 7,
+    "hash": "427e949",
+    "时间": "2026-03-05",
+    "信息": "【第7次提交】新增功能（技能库）：新增 libfuzzer 技能文件及 Cursor 技能配置",
+    "修改文件": [".agents/skills/libfuzzer/SKILL.md", ".cursor/skills/libfuzzer"],
+    "分支": "main"
   }
 ]
