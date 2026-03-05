@@ -54,5 +54,13 @@
     "信息": "【第7次提交】新增功能（技能库）：新增 libfuzzer 技能文件及 Cursor 技能配置",
     "修改文件": [".agents/skills/libfuzzer/SKILL.md", ".cursor/skills/libfuzzer"],
     "分支": "main"
+  },
+  {
+    "序号": 8,
+    "hash": "afd3798",
+    "时间": "2026-03-05",
+    "信息": "【第8次提交】文档更新（提交历史）：补录第6、7次提交记录至 commit_history.json",
+    "修改文件": ["commit_history.json"],
+    "分支": "main"
   }
 ]
