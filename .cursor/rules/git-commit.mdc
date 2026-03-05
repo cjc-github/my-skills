@@ -12,5 +12,6 @@ alwaysApply: true
 核心要求：
 - Commit message **全部使用中文**，格式为 `【第N次提交】<类型>（<范围>）：<描述>`
 - 提交前用 `git rev-list --count HEAD` 查询当前提交总数，计算本次序号
-- 提交成功后，将提交信息追加写入仓库根目录的 `commit_history.json`
+- **先更新 `commit_history.json`（hash 填 pending），再与业务文件一起提交，提交后 amend 回填真实 hash**
+- 严禁为补录历史记录单独发起额外提交，`commit_history.json` 必须与业务变更在同一次提交中
 - 向用户输出提交摘要（序号、Hash、修改文件数）
