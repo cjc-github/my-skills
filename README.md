@@ -6,17 +6,30 @@
 
 ```
 my-skills/
-├── README.md                              # 项目说明
+├── README.md                              # 项目说明（Markdown）
+├── README.html                            # HTML 版项目说明（由 README.md 导出）
 ├── commit_history.json                    # 提交历史记录（自动维护）
 ├── .agents/
 │   └── skills/
-│       └── libfuzzer/
-│           └── SKILL.md                   # libFuzzer 模糊测试技能（跨平台 Agent 规范）
+│       ├── libfuzzer/
+│       │   └── SKILL.md                   # libFuzzer 模糊测试技能（跨平台 Agent 规范）
+│       ├── markdown-to-html/
+│       │   └── SKILL.md                   # Markdown 转 HTML 技能
+│       ├── html-to-pdf/
+│       │   └── SKILL.md                   # HTML 转 PDF 技能
+│       ├── pdf-to-images/
+│       │   └── SKILL.md                   # PDF 转图片技能
+│       └── pdf-to-markdown/
+│           └── SKILL.md                   # PDF 转 Markdown 技能
 ├── .cursor/
 │   ├── rules/
 │   │   └── git-commit.mdc                # git 提交规范（每次对话自动触发）
 │   └── skills/
-│       └── libfuzzer -> .agents/skills/   # 符号链接，复用 .agents 中的技能
+│       ├── libfuzzer -> .agents/skills/libfuzzer           # 符号链接，复用 .agents 中的技能
+│       ├── markdown-to-html -> .agents/skills/markdown-to-html
+│       ├── html-to-pdf -> .agents/skills/html-to-pdf
+│       ├── pdf-to-images -> .agents/skills/pdf-to-images
+│       └── pdf-to-markdown -> .agents/skills/pdf-to-markdown
 └── skills/
     └── commit_log.md                      # 提交记录追踪 Skill（被 Rule 调用）
 ```
@@ -82,6 +95,66 @@ my-skills/
 3. 执行 `git commit`
 4. 追加记录到 `commit_history.json`
 5. 输出提交摘要
+
+---
+
+### 3. Markdown 转 HTML
+
+| 属性 | 值 |
+|------|-----|
+| 文件路径 | `.agents/skills/markdown-to-html/SKILL.md` |
+| Cursor 入口 | `.cursor/skills/markdown-to-html/SKILL.md`（符号链接） |
+| 类型 | 文档转换 |
+| 用途 | 使用 `marked`、`pandoc` 等工具，将 Markdown 文档批量转换为 HTML，支持 GFM 和多种 Markdown 方言 |
+
+**典型用途：**
+- 从 `README.md` 等 Markdown 文档生成 HTML 说明书
+- 为静态站点、知识库或 PDF 导出提供 HTML 中间格式
+
+---
+
+### 4. HTML 转 PDF
+
+| 属性 | 值 |
+|------|-----|
+| 文件路径 | `.agents/skills/html-to-pdf/SKILL.md` |
+| Cursor 入口 | `.cursor/skills/html-to-pdf/SKILL.md`（符号链接） |
+| 类型 | 文档转换 |
+| 用途 | 将 HTML 页面转换为 PDF，适配 A4 纸张，支持中文与 RTL 文本排版 |
+
+**典型用途：**
+- 将 `README.html` 或接口文档导出为 PDF 以便归档或分享
+- 批量生成打印友好的技术文档手册
+
+---
+
+### 5. PDF 转图片
+
+| 属性 | 值 |
+|------|-----|
+| 文件路径 | `.agents/skills/pdf-to-images/SKILL.md` |
+| Cursor 入口 | `.cursor/skills/pdf-to-images/SKILL.md`（符号链接） |
+| 类型 | 文档处理 |
+| 用途 | 使用 ImageMagick 将 PDF 按页转换为 PNG/JPG 图片，便于预览或嵌入到文档/幻灯片中 |
+
+**典型用途：**
+- 将技术白皮书拆分为多张图片用于 PPT 或博客插图
+- 为无法直接预览 PDF 的系统生成缩略图
+
+---
+
+### 6. PDF 转 Markdown
+
+| 属性 | 值 |
+|------|-----|
+| 文件路径 | `.agents/skills/pdf-to-markdown/SKILL.md` |
+| Cursor 入口 | `.cursor/skills/pdf-to-markdown/SKILL.md`（符号链接） |
+| 类型 | 文档转换 |
+| 用途 | 将 PDF 文档（含扫描件）转换为 Markdown，支持文本解析与 OCR，方便后续二次编辑与版本管理 |
+
+**典型用途：**
+- 将历史 PDF 文档迁移到 Markdown/仓库中统一管理
+- 从扫描版合同、手册中提取可编辑文本
 
 ---
 

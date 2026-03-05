@@ -4,7 +4,9 @@
     "hash": "0250a05",
     "时间": "2026-03-05",
     "信息": "Initial commit",
-    "修改文件": ["README.md"],
+    "修改文件": [
+      "README.md"
+    ],
     "分支": "main"
   },
   {
@@ -12,7 +14,10 @@
     "hash": "1bdb126",
     "时间": "2026-03-05",
     "信息": "add skills directory and update README",
-    "修改文件": ["README.md", "skills/commit_log.md"],
+    "修改文件": [
+      "README.md",
+      "skills/commit_log.md"
+    ],
     "分支": "main"
   },
   {
@@ -20,7 +25,10 @@
     "hash": "5590381",
     "时间": "2026-03-05",
     "信息": "【第3次提交】构建维护（项目配置）：新增 Cursor 规则自动触发 git 提交规范",
-    "修改文件": [".cursor/rules/git-commit.mdc", "README.md"],
+    "修改文件": [
+      ".cursor/rules/git-commit.mdc",
+      "README.md"
+    ],
     "分支": "main"
   },
   {
@@ -28,7 +36,9 @@
     "hash": "86c3fb3",
     "时间": "2026-03-05",
     "信息": "【第4次提交】文档更新（提交历史）：初始化 commit_history.json 补录前三次提交记录",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -36,7 +46,9 @@
     "hash": "880e15b",
     "时间": "2026-03-05",
     "信息": "【第5次提交】文档更新（README）：完善项目说明，新增 Skills 和 Rules 对照表及工作流程描述",
-    "修改文件": ["README.md"],
+    "修改文件": [
+      "README.md"
+    ],
     "分支": "main"
   },
   {
@@ -44,7 +56,9 @@
     "hash": "fbd5e0b",
     "时间": "2026-03-05",
     "信息": "【第6次提交】文档更新（提交历史）：补录第4、5次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -52,7 +66,10 @@
     "hash": "427e949",
     "时间": "2026-03-05",
     "信息": "【第7次提交】新增功能（技能库）：新增 libfuzzer 技能文件及 Cursor 技能配置",
-    "修改文件": [".agents/skills/libfuzzer/SKILL.md", ".cursor/skills/libfuzzer"],
+    "修改文件": [
+      ".agents/skills/libfuzzer/SKILL.md",
+      ".cursor/skills/libfuzzer"
+    ],
     "分支": "main"
   },
   {
@@ -60,7 +77,9 @@
     "hash": "afd3798",
     "时间": "2026-03-05",
     "信息": "【第8次提交】文档更新（提交历史）：补录第6、7次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -68,7 +87,9 @@
     "hash": "80c519c",
     "时间": "2026-03-05",
     "信息": "【第9次提交】文档更新（提交历史）：补录第8次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -76,7 +97,9 @@
     "hash": "79a3ab9",
     "时间": "2026-03-05",
     "信息": "【第10次提交】文档更新（提交历史）：补录第9次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -84,7 +107,9 @@
     "hash": "59e8845",
     "时间": "2026-03-05",
     "信息": "【第11次提交】文档更新（提交历史）：补录第10次提交记录，完成历史档案同步",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -92,7 +117,9 @@
     "hash": "4ad8a1c",
     "时间": "2026-03-05",
     "信息": "【第12次提交】文档更新（提交历史）：补录第11次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -100,7 +127,9 @@
     "hash": "964737c",
     "时间": "2026-03-05",
     "信息": "【第13次提交】文档更新（提交历史）：追加第12次提交记录，历史档案全部同步完成",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -108,7 +137,9 @@
     "hash": "a165d78",
     "时间": "2026-03-05",
     "信息": "【第14次提交】文档更新（提交历史）：追加第13次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -116,7 +147,9 @@
     "hash": "a2d018d",
     "时间": "2026-03-05",
     "信息": "【第15次提交】文档更新（提交历史）：追加第14次提交记录，完成本轮全部历史归档",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -124,7 +157,9 @@
     "hash": "f951e3d",
     "时间": "2026-03-05",
     "信息": "【第16次提交】文档更新（提交历史）：追加第15次提交记录，历史归档彻底完成",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -132,7 +167,9 @@
     "hash": "308401a",
     "时间": "2026-03-05",
     "信息": "【第17次提交】文档更新（README）：整理 Skills 清单并新增触发机制详解文档",
-    "修改文件": ["README.md"],
+    "修改文件": [
+      "README.md"
+    ],
     "分支": "main"
   },
   {
@@ -140,7 +177,9 @@
     "hash": "f5ba538",
     "时间": "2026-03-05",
     "信息": "【第18次提交】文档更新（提交历史）：补录第16、17次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -148,7 +187,9 @@
     "hash": "aef70d8",
     "时间": "2026-03-05",
     "信息": "【第19次提交】文档更新（提交历史）：补录第18次提交记录至 commit_history.json",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -156,7 +197,9 @@
     "hash": "e9876bf",
     "时间": "2026-03-05",
     "信息": "【第20次提交】文档更新（提交历史）：补录第19次提交记录，本轮归档完成",
-    "修改文件": ["commit_history.json"],
+    "修改文件": [
+      "commit_history.json"
+    ],
     "分支": "main"
   },
   {
@@ -164,7 +207,32 @@
     "hash": "c5b0f5f",
     "时间": "2026-03-05 15:07:54",
     "信息": "【第21次提交】代码重构（提交流程）：修复 commit_history.json 补录死循环问题",
-    "修改文件": ["skills/commit_log.md", ".cursor/rules/git-commit.mdc", "commit_history.json"],
+    "修改文件": [
+      "skills/commit_log.md",
+      ".cursor/rules/git-commit.mdc",
+      "commit_history.json"
+    ],
+    "分支": "main"
+  },
+  {
+    "序号": 22,
+    "hash": "99ec9f2",
+    "时间": "2026-03-05",
+    "信息": "【第22次提交】新增功能（文档与技能配置）：新增文档转换技能并更新 README/README.html",
+    "修改文件": [
+      "README.md",
+      "README.html",
+      "package.json",
+      "package-lock.json",
+      ".agents/skills/markdown-to-html/SKILL.md",
+      ".agents/skills/html-to-pdf/SKILL.md",
+      ".agents/skills/pdf-to-images/SKILL.md",
+      ".agents/skills/pdf-to-markdown/SKILL.md",
+      ".cursor/skills/markdown-to-html",
+      ".cursor/skills/html-to-pdf",
+      ".cursor/skills/pdf-to-images",
+      ".cursor/skills/pdf-to-markdown"
+    ],
     "分支": "main"
   }
 ]

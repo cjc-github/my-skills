@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>my-skills - 个人技能库</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+                 "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #24292e;
+    background: #fff;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 2em;
+    border-bottom: 2px solid #e1e4e8;
+    padding-bottom: 0.3em;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 0.3em;
+    margin-top: 1.5em;
+  }
+  h3 {
+    font-size: 1.25em;
+    margin-top: 1.2em;
+  }
+  code {
+    background: #f0f2f5;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.9em;
+  }
+  pre {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    line-height: 1.45;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.85em;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+  }
+  th, td {
+    border: 1px solid #dfe2e5;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th {
+    background: #f6f8fa;
+    font-weight: 600;
+  }
+  tr:nth-child(even) {
+    background: #fafbfc;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #e1e4e8;
+    margin: 2em 0;
+  }
+  ul, ol {
+    padding-left: 2em;
+  }
+  li {
+    margin: 0.25em 0;
+  }
+  strong {
+    font-weight: 600;
+  }
+  a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>my-skills</h1>
+<p>个人技能库，用于存放和管理自定义的 Agent Skills，配合 Cursor 规则实现标准化的 AI 辅助工作流。</p>
+<h2>目录结构</h2>
+<pre><code>my-skills/
+├── README.md                              # 项目说明（Markdown）
+├── README.html                            # HTML 版项目说明（由 README.md 导出）
+├── commit_history.json                    # 提交历史记录（自动维护）
+├── .agents/
+│   └── skills/
+│       ├── libfuzzer/
+│       │   └── SKILL.md                   # libFuzzer 模糊测试技能（跨平台 Agent 规范）
+│       ├── markdown-to-html/
+│       │   └── SKILL.md                   # Markdown 转 HTML 技能
+│       ├── html-to-pdf/
+│       │   └── SKILL.md                   # HTML 转 PDF 技能
+│       ├── pdf-to-images/
+│       │   └── SKILL.md                   # PDF 转图片技能
+│       └── pdf-to-markdown/
+│           └── SKILL.md                   # PDF 转 Markdown 技能
+├── .cursor/
+│   ├── rules/
+│   │   └── git-commit.mdc                # git 提交规范（每次对话自动触发）
+│   └── skills/
+│       ├── libfuzzer -&gt; .agents/skills/libfuzzer           # 符号链接，复用 .agents 中的技能
+│       ├── markdown-to-html -&gt; .agents/skills/markdown-to-html
+│       ├── html-to-pdf -&gt; .agents/skills/html-to-pdf
+│       ├── pdf-to-images -&gt; .agents/skills/pdf-to-images
+│       └── pdf-to-markdown -&gt; .agents/skills/pdf-to-markdown
+└── skills/
+    └── commit_log.md                      # 提交记录追踪 Skill（被 Rule 调用）
+</code></pre>
+<h3>目录说明</h3>
+<table>
+<thead>
+<tr><th>目录</th><th>用途</th><th>适用范围</th></tr>
+</thead>
+<tbody>
+<tr><td><code>.agents/skills/</code></td><td>跨平台 Agent Skills 存储，遵循通用 <code>.agents/</code> 目录规范</td><td>所有支持该规范的 AI Agent</td></tr>
+<tr><td><code>.cursor/skills/</code></td><td>Cursor 专用技能目录，通过符号链接复用 <code>.agents/</code> 中的技能</td><td>Cursor Agent</td></tr>
+<tr><td><code>.cursor/rules/</code></td><td>Cursor 规则文件，控制技能的自动触发时机</td><td>Cursor Agent</td></tr>
+<tr><td><code>skills/</code></td><td>自定义流程型技能，由 Rule 文件间接调用</td><td>Cursor Agent</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>Skills 清单</h2>
+<h3>1. libFuzzer 模糊测试</h3>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td>文件路径</td><td><code>.agents/skills/libfuzzer/SKILL.md</code></td></tr>
+<tr><td>Cursor 入口</td><td><code>.cursor/skills/libfuzzer/SKILL.md</code>（符号链接）</td></tr>
+<tr><td>类型</td><td>fuzzer</td></tr>
+<tr><td>用途</td><td>基于 LLVM 的覆盖引导模糊测试，适用于 C/C++ 项目</td></tr>
+</tbody>
+</table>
+<p><strong>触发方式：</strong></p>
+<ul>
+<li><strong>自动触发</strong>：当对话中涉及 C/C++ 模糊测试、fuzzing、libFuzzer、Clang sanitizer 等关键词时，Cursor Agent 会自动匹配并加载该技能</li>
+<li><strong>手动触发</strong>：在 Cursor 对话中直接描述需求即可，例如：
+<ul>
+<li>"帮我对这个 C++ 项目做模糊测试"</li>
+<li>"用 libfuzzer 编写 fuzz harness"</li>
+<li>"帮我给这个函数写一个 fuzzing 测试用例"</li>
+</ul></li>
+</ul>
+<p><strong>主要能力</strong>：</p>
+<ul>
+<li>编写 libFuzzer harness（<code>LLVMFuzzerTestOneInput</code>）</li>
+<li>使用 Clang sanitizer 编译并运行模糊测试</li>
+<li>Corpus 管理与最小化</li>
+<li>崩溃分析与复现</li>
+<li>与 AFL++ 的兼容迁移指导</li>
+</ul>
+<hr>
+<h3>2. 提交记录追踪</h3>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td>文件路径</td><td><code>skills/commit_log.md</code></td></tr>
+<tr><td>关联规则</td><td><code>.cursor/rules/git-commit.mdc</code></td></tr>
+<tr><td>用途</td><td>规范化 git 提交：中文 commit message、自动编号、历史记录追踪</td></tr>
+</tbody>
+</table>
+<p><strong>触发方式：</strong></p>
+<ul>
+<li><strong>自动触发</strong>：<code>.cursor/rules/git-commit.mdc</code> 设置了 <code>alwaysApply: true</code>，每次 Cursor 对话都会加载该规则。当用户执行 git 提交操作时，Agent 会自动读取 <code>skills/commit_log.md</code> 并执行完整流程</li>
+<li><strong>手动触发</strong>：在 Cursor 对话中请求提交即可，例如：
+<ul>
+<li>"帮我提交代码"</li>
+<li>"更新 git"</li>
+<li>"git commit"</li>
+</ul></li>
+</ul>
+<p><strong>自动执行流程</strong>：</p>
+<ol>
+<li>查询仓库提交总数，计算本次序号</li>
+<li>构造中文 commit message：<code>【第N次提交】类型（范围）：描述</code></li>
+<li>执行 <code>git commit</code></li>
+<li>追加记录到 <code>commit_history.json</code></li>
+<li>输出提交摘要</li>
+</ol>
+<hr>
+<h3>3. Markdown 转 HTML</h3>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td>文件路径</td><td><code>.agents/skills/markdown-to-html/SKILL.md</code></td></tr>
+<tr><td>Cursor 入口</td><td><code>.cursor/skills/markdown-to-html/SKILL.md</code>（符号链接）</td></tr>
+<tr><td>类型</td><td>文档转换</td></tr>
+<tr><td>用途</td><td>使用 <code>marked</code>、<code>pandoc</code> 等工具，将 Markdown 文档批量转换为 HTML，支持 GFM 和多种 Markdown 方言</td></tr>
+</tbody>
+</table>
+<p><strong>典型用途：</strong></p>
+<ul>
+<li>从 <code>README.md</code> 等 Markdown 文档生成 HTML 说明书</li>
+<li>为静态站点、知识库或 PDF 导出提供 HTML 中间格式</li>
+</ul>
+<hr>
+<h3>4. HTML 转 PDF</h3>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td>文件路径</td><td><code>.agents/skills/html-to-pdf/SKILL.md</code></td></tr>
+<tr><td>Cursor 入口</td><td><code>.cursor/skills/html-to-pdf/SKILL.md</code>（符号链接）</td></tr>
+<tr><td>类型</td><td>文档转换</td></tr>
+<tr><td>用途</td><td>将 HTML 页面转换为 PDF，适配 A4 纸张，支持中文与 RTL 文本排版</td></tr>
+</tbody>
+</table>
+<p><strong>典型用途：</strong></p>
+<ul>
+<li>将 <code>README.html</code> 或接口文档导出为 PDF 以便归档或分享</li>
+<li>批量生成打印友好的技术文档手册</li>
+</ul>
+<hr>
+<h3>5. PDF 转图片</h3>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td>文件路径</td><td><code>.agents/skills/pdf-to-images/SKILL.md</code></td></tr>
+<tr><td>Cursor 入口</td><td><code>.cursor/skills/pdf-to-images/SKILL.md</code>（符号链接）</td></tr>
+<tr><td>类型</td><td>文档处理</td></tr>
+<tr><td>用途</td><td>使用 ImageMagick 将 PDF 按页转换为 PNG/JPG 图片，便于预览或嵌入到文档/幻灯片中</td></tr>
+</tbody>
+</table>
+<p><strong>典型用途：</strong></p>
+<ul>
+<li>将技术白皮书拆分为多张图片用于 PPT 或博客插图</li>
+<li>为无法直接预览 PDF 的系统生成缩略图</li>
+</ul>
+<hr>
+<h3>6. PDF 转 Markdown</h3>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td>文件路径</td><td><code>.agents/skills/pdf-to-markdown/SKILL.md</code></td></tr>
+<tr><td>Cursor 入口</td><td><code>.cursor/skills/pdf-to-markdown/SKILL.md</code>（符号链接）</td></tr>
+<tr><td>类型</td><td>文档转换</td></tr>
+<tr><td>用途</td><td>将 PDF 文档（含扫描件）转换为 Markdown，支持文本解析与 OCR，方便后续二次编辑与版本管理</td></tr>
+</tbody>
+</table>
+<p><strong>典型用途：</strong></p>
+<ul>
+<li>将历史 PDF 文档迁移到 Markdown/仓库中统一管理</li>
+<li>从扫描版合同、手册中提取可编辑文本</li>
+</ul>
+<hr>
+<h2>Cursor Rules 说明</h2>
+<table>
+<thead><tr><th>规则文件</th><th>触发时机</th><th>作用</th></tr></thead>
+<tbody>
+<tr><td><code>.cursor/rules/git-commit.mdc</code></td><td>每次对话（<code>alwaysApply: true</code>）</td><td>执行 git 提交时自动调用 <code>skills/commit_log.md</code> 流程</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>触发机制详解</h2>
+<h3>自动触发（Cursor Agent 智能匹配）</h3>
+<p>Cursor Agent 通过以下机制自动触发技能：</p>
+<ol>
+<li><strong>Rules（规则）</strong>：<code>.cursor/rules/*.mdc</code> 文件中设置 <code>alwaysApply: true</code> 的规则，在每次对话中都会生效。当检测到匹配场景（如 git 提交），自动调用关联的 Skill</li>
+<li><strong>Skills（技能）</strong>：<code>.cursor/skills/*/SKILL.md</code> 中的 <code>description</code> 字段会被 Agent 用于语义匹配。当用户意图与描述匹配时，自动加载执行</li>
+</ol>
+<h3>手动触发（用户主动描述需求）</h3>
+<p>在 Cursor Agent 对话中用自然语言描述需求即可。Agent 会根据语义理解匹配最合适的 Skill。</p>
+<p><strong>有效的触发话术示例：</strong></p>
+<table>
+<thead><tr><th>想要触发的 Skill</th><th>可以这样说</th></tr></thead>
+<tbody>
+<tr><td>libFuzzer</td><td>"对这个 C++ 函数做 fuzz 测试"、"写一个 libfuzzer harness"</td></tr>
+<tr><td>提交记录追踪</td><td>"帮我提交代码"、"更新 git"、"commit 一下"</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>扩展方式</h2>
+<h3>添加新技能</h3>
+<ol>
+<li>在 <code>.agents/skills/</code> 下创建新目录和 <code>SKILL.md</code> 文件</li>
+<li>在 <code>.cursor/skills/</code> 下创建符号链接指向该技能</li>
+<li>如需自动触发，在 <code>.cursor/rules/</code> 下创建对应 <code>.mdc</code> 规则文件</li>
+</ol>
+<pre><code class="language-bash"># 示例：添加名为 my-new-skill 的技能
+mkdir -p .agents/skills/my-new-skill
+# 编写 SKILL.md（包含 name 和 description 前置元数据）
+ln -s ../../.agents/skills/my-new-skill .cursor/skills/my-new-skill
+</code></pre>
+<h3>SKILL.md 基本格式</h3>
+<pre><code class="language-markdown">---
+name: skill-name
+description: 简要说明技能用途和触发场景
+---
+
+# 技能名称
+
+## 使用说明
+...
+</code></pre>
+<p><code>description</code> 字段是 Agent 自动匹配的关键，需要明确写出<strong>做什么</strong>和<strong>何时使用</strong>。</p>
+</div>
+</body>
+</html>
