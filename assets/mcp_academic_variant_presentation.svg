@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1040" viewBox="0 0 1600 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7FAFF"/>
+      <stop offset="100%" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="hostGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E9F2FF"/>
+      <stop offset="100%" stop-color="#D9E7FF"/>
+    </linearGradient>
+    <linearGradient id="protocolGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1ECFF"/>
+      <stop offset="100%" stop-color="#E6DCFF"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF4DE"/>
+      <stop offset="100%" stop-color="#FFE7B8"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L10 6L1 11" stroke="#274C77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .title { font: 700 38px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #102A43; }
+      .subtitle { font: 400 18px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #486581; }
+      .stage { font: 700 18px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #1F3A5F; letter-spacing: 0.06em; }
+      .boxTitle { font: 700 24px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #16324F; }
+      .label { font: 700 20px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #17324D; }
+      .text { font: 400 16px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #334E68; }
+      .small { font: 500 14px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #5C6F82; }
+      .tag { font: 700 16px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #FFFFFF; }
+      .accent { font: 700 16px 'IBM Plex Sans', 'Inter', Arial, sans-serif; fill: #274C77; }
+      .caption { font: 400 15px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #486581; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="url(#bg)"/>
+  <rect x="28" y="28" width="1544" height="984" rx="28" fill="#FCFDFF" stroke="#C9D6E2" stroke-width="2"/>
+
+  <text x="88" y="106" class="title">MCP Architecture for Teaching and Presentation</text>
+  <text x="88" y="136" class="subtitle">This variant keeps the academic terminology, but increases contrast and visual emphasis for slide decks and classroom explanation.</text>
+
+  <rect x="88" y="174" width="1424" height="62" rx="18" fill="#FFFFFF" stroke="#D7E2F0" stroke-width="1.5"/>
+  <circle cx="138" cy="205" r="20" fill="#274C77"/>
+  <text x="138" y="212" text-anchor="middle" class="tag">1</text>
+  <text x="176" y="198" class="label">Host applications formulate intent</text>
+  <text x="176" y="220" class="text">Desktop AI tools, IDEs, and domain agents call into MCP clients rather than coding directly against each backend.</text>
+
+  <rect x="88" y="266" width="420" height="520" rx="24" fill="url(#hostGrad)" stroke="#BCD1F0" stroke-width="2"/>
+  <text x="118" y="314" class="stage">STAGE A</text>
+  <text x="118" y="348" class="boxTitle">Host Environment</text>
+  <text x="118" y="376" class="text">Representative application categories that need controlled access to external capabilities.</text>
+
+  <rect x="118" y="420" width="360" height="92" rx="18" fill="#FFFFFF" stroke="#BFD1E8" stroke-width="1.4"/>
+  <text x="148" y="458" class="label">Desktop AI Assistants</text>
+  <text x="148" y="486" class="small">Research assistants, copilots, and conversational interfaces</text>
+
+  <rect x="118" y="536" width="360" height="92" rx="18" fill="#FFFFFF" stroke="#BFD1E8" stroke-width="1.4"/>
+  <text x="148" y="574" class="label">Integrated Development Environments</text>
+  <text x="148" y="602" class="small">Editors that need tools, files, prompts, and structured context</text>
+
+  <rect x="118" y="652" width="360" height="92" rx="18" fill="#FFFFFF" stroke="#BFD1E8" stroke-width="1.4"/>
+  <text x="148" y="690" class="label">Specialized AI Applications</text>
+  <text x="148" y="718" class="small">Operations, analytics, automation, and domain-specific orchestration</text>
+
+  <rect x="542" y="266" width="488" height="520" rx="24" fill="url(#protocolGrad)" stroke="#CDBDF2" stroke-width="2"/>
+  <text x="572" y="314" class="stage">STAGE B</text>
+  <text x="572" y="348" class="boxTitle">Protocol Mediation</text>
+  <text x="572" y="376" class="text">The MCP layer standardizes how requests move from intent to execution.</text>
+
+  <rect x="572" y="424" width="170" height="86" rx="18" fill="#FFFFFF" stroke="#CDBDF2" stroke-width="1.4"/>
+  <text x="657" y="460" text-anchor="middle" class="label">MCP Client</text>
+  <text x="657" y="486" text-anchor="middle" class="small">host adapter</text>
+
+  <rect x="802" y="414" width="198" height="106" rx="18" fill="#FFFFFF" stroke="#CDBDF2" stroke-width="1.4"/>
+  <text x="901" y="456" text-anchor="middle" class="label">Transport Layer</text>
+  <text x="901" y="482" text-anchor="middle" class="small">stdio, RPC, or stream transport</text>
+
+  <line x1="742" y1="467" x2="802" y2="467" stroke="#274C77" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <line x1="802" y1="490" x2="742" y2="490" stroke="#274C77" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <text x="772" y="446" class="accent">MCP messages</text>
+
+  <rect x="572" y="566" width="428" height="170" rx="20" fill="#FFFFFF" stroke="#CDBDF2" stroke-width="1.4"/>
+  <text x="606" y="608" class="label">Capability Server</text>
+  <text x="606" y="636" class="text">Servers expose a clean capability surface independent of backend implementation details.</text>
+
+  <rect x="606" y="668" width="102" height="40" rx="12" fill="#EEE8FF"/>
+  <text x="657" y="693" text-anchor="middle" class="small">Tools</text>
+  <rect x="722" y="668" width="122" height="40" rx="12" fill="#EEE8FF"/>
+  <text x="783" y="693" text-anchor="middle" class="small">Resources</text>
+  <rect x="858" y="668" width="106" height="40" rx="12" fill="#EEE8FF"/>
+  <text x="911" y="693" text-anchor="middle" class="small">Prompts</text>
+
+  <line x1="901" y1="520" x2="901" y2="566" stroke="#274C77" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <text x="916" y="550" class="accent">normalized capability access</text>
+
+  <rect x="1064" y="266" width="448" height="520" rx="24" fill="url(#serverGrad)" stroke="#E5C888" stroke-width="2"/>
+  <text x="1094" y="314" class="stage">STAGE C</text>
+  <text x="1094" y="348" class="boxTitle">Execution Endpoints</text>
+  <text x="1094" y="376" class="text">Concrete systems that are ultimately reached after server mediation.</text>
+
+  <rect x="1094" y="420" width="388" height="88" rx="18" fill="#FFFFFF" stroke="#E5C888" stroke-width="1.4"/>
+  <text x="1126" y="457" class="label">Local File Systems</text>
+  <text x="1126" y="484" class="small">Artifacts, source trees, documents, and generated outputs</text>
+
+  <rect x="1094" y="534" width="388" height="88" rx="18" fill="#FFFFFF" stroke="#E5C888" stroke-width="1.4"/>
+  <text x="1126" y="571" class="label">Database Systems</text>
+  <text x="1126" y="598" class="small">Transactional, analytical, and semantic retrieval backends</text>
+
+  <rect x="1094" y="648" width="388" height="88" rx="18" fill="#FFFFFF" stroke="#E5C888" stroke-width="1.4"/>
+  <text x="1126" y="685" class="label">External Web APIs</text>
+  <text x="1126" y="712" class="small">Internet-facing services including search, repositories, and messaging</text>
+
+  <line x1="1000" y1="612" x2="1094" y2="462" stroke="#A16A00" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="1000" y1="630" x2="1094" y2="578" stroke="#A16A00" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="1000" y1="648" x2="1094" y2="692" stroke="#A16A00" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="88" y="826" width="1424" height="134" rx="20" fill="#FFFFFF" stroke="#D7E2F0" stroke-width="1.5"/>
+  <circle cx="138" cy="867" r="20" fill="#274C77"/>
+  <text x="138" y="874" text-anchor="middle" class="tag">2</text>
+  <text x="176" y="860" class="label">Key message for presentation</text>
+  <text x="176" y="888" class="text">MCP is not the backend itself; it is the protocol boundary that lets one host interface reach multiple tools, resources, and prompts across heterogeneous systems.</text>
+  <text x="176" y="920" class="caption">Use this variant when you want the audience to understand the directional flow from host intent, through protocol mediation, to concrete execution environments.</text>
+</svg>

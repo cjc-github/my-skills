@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1040" viewBox="0 0 1600 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L10 6L1 11" stroke="#1F2933" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .title { font: 700 33px 'Times New Roman', Georgia, serif; fill: #111827; }
+      .subtitle { font: 400 17px 'Inter', Arial, sans-serif; fill: #4B5563; }
+      .section { font: 700 18px 'Inter', Arial, sans-serif; fill: #111827; letter-spacing: 0.08em; }
+      .boxTitle { font: 700 22px 'Inter', Arial, sans-serif; fill: #111827; }
+      .label { font: 600 18px 'Inter', Arial, sans-serif; fill: #111827; }
+      .text { font: 400 16px 'Inter', Arial, sans-serif; fill: #374151; }
+      .small { font: 400 14px 'Inter', Arial, sans-serif; fill: #6B7280; }
+      .caption { font: 400 15px 'Times New Roman', Georgia, serif; fill: #374151; }
+      .code { font: 600 15px 'IBM Plex Sans', 'Inter', Arial, sans-serif; fill: #1F2933; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="#FFFFFF"/>
+  <rect x="56" y="56" width="1488" height="928" rx="10" fill="#FFFFFF" stroke="#111827" stroke-width="1.5"/>
+
+  <text x="90" y="110" class="title">Figure A. Formal Layered View of the Model Context Protocol</text>
+  <text x="90" y="140" class="subtitle">This variant emphasizes analytical clarity, reduced ornamentation, and publication-style hierarchy.</text>
+  <line x1="88" y1="162" x2="1512" y2="162" stroke="#111827" stroke-width="1.2"/>
+
+  <text x="108" y="210" class="section">HOST LAYER</text>
+  <text x="624" y="210" class="section">PROTOCOL MEDIATION LAYER</text>
+  <text x="1134" y="210" class="section">EXECUTION AND DATA LAYER</text>
+
+  <rect x="92" y="236" width="382" height="544" fill="#FAFAFA" stroke="#111827" stroke-width="1.4"/>
+  <rect x="500" y="236" width="526" height="544" fill="#FFFFFF" stroke="#111827" stroke-width="1.4"/>
+  <rect x="1052" y="236" width="454" height="544" fill="#FAFAFA" stroke="#111827" stroke-width="1.4"/>
+
+  <text x="122" y="278" class="boxTitle">MCP Host Environment</text>
+  <text x="122" y="306" class="text">Applications that embed an MCP-compatible client runtime and</text>
+  <text x="122" y="328" class="text">issue structured requests against external capabilities.</text>
+
+  <rect x="122" y="356" width="322" height="86" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="148" y="391" class="label">Desktop AI Assistants</text>
+  <text x="148" y="418" class="small">Interactive systems for question answering, task execution, and workflow control.</text>
+
+  <rect x="122" y="468" width="322" height="86" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="148" y="503" class="label">Integrated Development Environments</text>
+  <text x="148" y="530" class="small">Editors and coding copilots that require tools, files, prompts, and execution context.</text>
+
+  <rect x="122" y="580" width="322" height="86" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="148" y="615" class="label">Specialized AI Applications</text>
+  <text x="148" y="642" class="small">Domain platforms for research, analytics, operations, or orchestration.</text>
+
+  <text x="530" y="278" class="boxTitle">MCP Transport and Server Abstraction</text>
+  <text x="530" y="306" class="text">A host-side client communicates with one or more MCP servers over</text>
+  <text x="530" y="328" class="text">a bidirectional transport, separating intent from backend implementation.</text>
+
+  <rect x="560" y="368" width="152" height="72" fill="#F4F4F5" stroke="#111827" stroke-width="1.2"/>
+  <text x="636" y="400" text-anchor="middle" class="label">Client</text>
+  <text x="636" y="424" text-anchor="middle" class="small">host adapter</text>
+
+  <rect x="770" y="358" width="150" height="92" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="845" y="392" text-anchor="middle" class="label">Transport</text>
+  <text x="845" y="418" text-anchor="middle" class="small">stdio / stream / RPC</text>
+
+  <rect x="560" y="504" width="360" height="176" fill="#FAFAFA" stroke="#111827" stroke-width="1.2"/>
+  <text x="590" y="544" class="label">Capability Server</text>
+  <text x="590" y="572" class="text">The server presents a normalized interface to capabilities that may</text>
+  <text x="590" y="594" class="text">originate from local processes, databases, or remote network services.</text>
+
+  <rect x="590" y="618" width="92" height="38" fill="#FFFFFF" stroke="#111827" stroke-width="1.1"/>
+  <text x="636" y="642" text-anchor="middle" class="small">Tools</text>
+  <rect x="694" y="618" width="112" height="38" fill="#FFFFFF" stroke="#111827" stroke-width="1.1"/>
+  <text x="750" y="642" text-anchor="middle" class="small">Resources</text>
+  <rect x="818" y="618" width="90" height="38" fill="#FFFFFF" stroke="#111827" stroke-width="1.1"/>
+  <text x="863" y="642" text-anchor="middle" class="small">Prompts</text>
+
+  <line x1="712" y1="404" x2="770" y2="404" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="920" y1="404" x2="560" y2="548" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="738" y="390" class="code">MCP request / response</text>
+
+  <text x="1082" y="278" class="boxTitle">Execution and Data Endpoints</text>
+  <text x="1082" y="306" class="text">Servers translate protocol calls into concrete operations over local</text>
+  <text x="1082" y="328" class="text">state, structured data stores, and external service APIs.</text>
+
+  <rect x="1082" y="364" width="394" height="92" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="1112" y="400" class="label">Local File Systems</text>
+  <text x="1112" y="426" class="small">Project trees, documents, binary artifacts, and local execution outputs.</text>
+
+  <rect x="1082" y="484" width="394" height="92" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="1112" y="520" class="label">Database Systems</text>
+  <text x="1112" y="546" class="small">Transactional stores, analytical engines, vector databases, and caches.</text>
+
+  <rect x="1082" y="604" width="394" height="92" fill="#FFFFFF" stroke="#111827" stroke-width="1.2"/>
+  <text x="1112" y="640" class="label">External Web Services</text>
+  <text x="1112" y="666" class="small">HTTP APIs, collaboration platforms, code hosting systems, and search services.</text>
+
+  <line x1="920" y1="548" x2="1082" y2="410" stroke="#111827" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="920" y1="572" x2="1082" y2="530" stroke="#111827" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="920" y1="596" x2="1082" y2="650" stroke="#111827" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <text x="536" y="734" class="small">Server-side mediation preserves a consistent control surface while hiding backend-specific connectors and execution semantics.</text>
+
+  <line x1="88" y1="820" x2="1512" y2="820" stroke="#111827" stroke-width="1"/>
+  <text x="90" y="858" class="caption">Caption: In a publication-oriented rendering, MCP can be interpreted as a layered protocol abstraction. Host applications issue requests through a client runtime; transport mechanisms carry those requests to servers; and servers expose tools, resources, and prompts backed by local, database, or internet-facing systems.</text>
+  <text x="90" y="890" class="caption">Design note: Compared with the earlier figure, this variant suppresses decorative color and iconography to prioritize semantic grouping, annotation density, and print readability.</text>
+</svg>

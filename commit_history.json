@@ -255,5 +255,16 @@
       "assets/mcp_academic_diagram.svg"
     ],
     "分支": "cursor/-bc-a5a44a0d-bcaa-4ac8-9ba0-3dcd2698f701-8a20"
+  },
+  {
+    "序号": 25,
+    "hash": "22a31b9",
+    "时间": "2026-03-06 02:11:58",
+    "信息": "【第25次提交】文档更新（架构示意图）：新增 MCP 学术风格双变体图片",
+    "修改文件": [
+      "assets/mcp_academic_variant_paper.svg",
+      "assets/mcp_academic_variant_presentation.svg"
+    ],
+    "分支": "cursor/-bc-a5a44a0d-bcaa-4ac8-9ba0-3dcd2698f701-8a20"
   }
 ]
