@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1120" viewBox="0 0 1600 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="panelBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EEF2F7"/>
+    </linearGradient>
+    <linearGradient id="accentBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8F1FF"/>
+      <stop offset="100%" stop-color="#DCE7F8"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L10 6L1 11" stroke="#415A77" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowLight" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L10 6L1 11" stroke="#6B7C93" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .title { font: 700 34px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #102A43; }
+      .subtitle { font: 400 16px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #486581; }
+      .section { font: 700 22px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #1F3A5F; letter-spacing: 0.04em; }
+      .panelTitle { font: 700 22px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #16324F; }
+      .panelText { font: 400 17px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #334E68; }
+      .small { font: 400 15px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #5C6F82; }
+      .label { font: 600 18px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #1B365D; }
+      .miniLabel { font: 600 16px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #243B53; }
+      .caption { font: 400 14px 'Inter', 'Segoe UI', Arial, sans-serif; fill: #6B7C93; }
+      .mono { font: 600 15px 'IBM Plex Sans', 'Inter', Arial, sans-serif; fill: #415A77; letter-spacing: 0.02em; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#FFFFFF"/>
+  <rect x="24" y="24" width="1552" height="1072" rx="28" fill="#FCFDFF" stroke="#C9D6E2" stroke-width="2"/>
+
+  <rect x="60" y="54" width="1480" height="80" rx="18" fill="url(#accentBg)" stroke="#C1D4EE" stroke-width="1.5"/>
+  <text x="92" y="101" class="title">Model Context Protocol (MCP): Conceptual Architecture</text>
+  <text x="92" y="124" class="subtitle">A formalized view of how host applications, protocol clients, capability servers, and external execution environments interact.</text>
+
+  <text x="88" y="182" class="section">I. SYSTEM-LEVEL INTERACTION MODEL</text>
+  <line x1="88" y1="196" x2="1510" y2="196" stroke="#D9E2EC" stroke-width="2"/>
+
+  <rect x="82" y="222" width="1436" height="404" rx="24" fill="url(#panelBg)" stroke="#D9E2EC" stroke-width="1.8"/>
+
+  <rect x="118" y="258" width="346" height="332" rx="22" fill="#FFFFFF" stroke="#B8C7D9" stroke-width="2"/>
+  <text x="146" y="298" class="panelTitle">MCP Host Environment</text>
+  <text x="146" y="325" class="small">Representative applications that embed an MCP-compatible client runtime.</text>
+
+  <rect x="146" y="352" width="290" height="70" rx="16" fill="#F6F9FC" stroke="#D9E2EC" stroke-width="1.4"/>
+  <circle cx="178" cy="387" r="16" fill="#E8EEF6" stroke="#9FB3C8" stroke-width="1.2"/>
+  <path d="M170 387H186M178 379V395" stroke="#486581" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="208" y="381" class="label">Desktop AI Assistants</text>
+  <text x="208" y="402" class="small">e.g., conversational interfaces and research copilots</text>
+
+  <rect x="146" y="438" width="290" height="70" rx="16" fill="#F6F9FC" stroke="#D9E2EC" stroke-width="1.4"/>
+  <rect x="164" y="457" width="30" height="22" rx="4" fill="#E8EEF6" stroke="#9FB3C8" stroke-width="1.2"/>
+  <path d="M159 486H199" stroke="#486581" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="208" y="467" class="label">Integrated Development Environments</text>
+  <text x="208" y="488" class="small">editor platforms with tool invocation and context exchange</text>
+
+  <rect x="146" y="524" width="290" height="70" rx="16" fill="#F6F9FC" stroke="#D9E2EC" stroke-width="1.4"/>
+  <rect x="165" y="541" width="28" height="36" rx="6" fill="#E8EEF6" stroke="#9FB3C8" stroke-width="1.2"/>
+  <path d="M172 551H186M172 560H186M172 569H181" stroke="#486581" stroke-width="1.7" stroke-linecap="round"/>
+  <text x="208" y="553" class="label">Specialized AI Applications</text>
+  <text x="208" y="574" class="small">domain-specific agents, dashboards, and orchestration systems</text>
+
+  <rect x="530" y="280" width="180" height="72" rx="18" fill="#F7F5FF" stroke="#B8ACD9" stroke-width="1.8"/>
+  <text x="620" y="313" text-anchor="middle" class="label">Client Adapter</text>
+  <text x="620" y="336" text-anchor="middle" class="small">MCP client</text>
+
+  <rect x="530" y="390" width="180" height="72" rx="18" fill="#F7F5FF" stroke="#B8ACD9" stroke-width="1.8"/>
+  <text x="620" y="423" text-anchor="middle" class="label">Client Adapter</text>
+  <text x="620" y="446" text-anchor="middle" class="small">MCP client</text>
+
+  <rect x="530" y="500" width="180" height="72" rx="18" fill="#F7F5FF" stroke="#B8ACD9" stroke-width="1.8"/>
+  <text x="620" y="533" text-anchor="middle" class="label">Client Adapter</text>
+  <text x="620" y="556" text-anchor="middle" class="small">MCP client</text>
+
+  <rect x="814" y="258" width="272" height="116" rx="20" fill="#FFFFFF" stroke="#C9B16E" stroke-width="2"/>
+  <text x="950" y="292" text-anchor="middle" class="panelTitle">Capability Server</text>
+  <text x="950" y="320" text-anchor="middle" class="small">Protocol endpoint exposing tools, resources, and prompts</text>
+  <rect x="852" y="334" width="196" height="20" rx="10" fill="#F8F2E3"/>
+  <circle cx="870" cy="344" r="5" fill="#D8A83A"/>
+  <circle cx="891" cy="344" r="5" fill="#D8A83A"/>
+  <circle cx="912" cy="344" r="5" fill="#D8A83A"/>
+
+  <rect x="814" y="368" width="272" height="116" rx="20" fill="#FFFFFF" stroke="#C9B16E" stroke-width="2"/>
+  <text x="950" y="402" text-anchor="middle" class="panelTitle">Capability Server</text>
+  <text x="950" y="430" text-anchor="middle" class="small">Mediates access to structured data and execution backends</text>
+  <rect x="852" y="444" width="196" height="20" rx="10" fill="#F8F2E3"/>
+  <circle cx="870" cy="454" r="5" fill="#D8A83A"/>
+  <circle cx="891" cy="454" r="5" fill="#D8A83A"/>
+  <circle cx="912" cy="454" r="5" fill="#D8A83A"/>
+
+  <rect x="814" y="478" width="272" height="116" rx="20" fill="#FFFFFF" stroke="#C9B16E" stroke-width="2"/>
+  <text x="950" y="512" text-anchor="middle" class="panelTitle">Capability Server</text>
+  <text x="950" y="540" text-anchor="middle" class="small">Bridges MCP calls to remote APIs and internet-facing services</text>
+  <rect x="852" y="554" width="196" height="20" rx="10" fill="#F8F2E3"/>
+  <circle cx="870" cy="564" r="5" fill="#D8A83A"/>
+  <circle cx="891" cy="564" r="5" fill="#D8A83A"/>
+  <circle cx="912" cy="564" r="5" fill="#D8A83A"/>
+
+  <rect x="1186" y="258" width="270" height="116" rx="20" fill="#FFFFFF" stroke="#A7B8CC" stroke-width="2"/>
+  <text x="1321" y="298" text-anchor="middle" class="label">Local File Systems</text>
+  <text x="1321" y="324" text-anchor="middle" class="small">document stores, project trees, local artifacts</text>
+  <rect x="1231" y="340" width="180" height="18" rx="9" fill="#EDF2F7"/>
+
+  <rect x="1186" y="368" width="270" height="116" rx="20" fill="#FFFFFF" stroke="#A7B8CC" stroke-width="2"/>
+  <text x="1321" y="408" text-anchor="middle" class="label">Database Systems</text>
+  <text x="1321" y="434" text-anchor="middle" class="small">transactional stores, analytics engines, vector indices</text>
+  <rect x="1231" y="450" width="180" height="18" rx="9" fill="#EDF2F7"/>
+
+  <rect x="1186" y="478" width="270" height="116" rx="20" fill="#FFFFFF" stroke="#A7B8CC" stroke-width="2"/>
+  <text x="1321" y="518" text-anchor="middle" class="label">External Web Services</text>
+  <text x="1321" y="544" text-anchor="middle" class="small">search, messaging, repository, and collaboration APIs</text>
+  <rect x="1231" y="560" width="180" height="18" rx="9" fill="#EDF2F7"/>
+
+  <line x1="464" y1="316" x2="530" y2="316" stroke="#8FA6BF" stroke-width="2.2" stroke-dasharray="6 6" marker-end="url(#arrowLight)"/>
+  <line x1="464" y1="426" x2="530" y2="426" stroke="#8FA6BF" stroke-width="2.2" stroke-dasharray="6 6" marker-end="url(#arrowLight)"/>
+  <line x1="464" y1="536" x2="530" y2="536" stroke="#8FA6BF" stroke-width="2.2" stroke-dasharray="6 6" marker-end="url(#arrowLight)"/>
+
+  <line x1="710" y1="316" x2="814" y2="316" stroke="#415A77" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="814" y1="338" x2="710" y2="338" stroke="#415A77" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="762" y="304" text-anchor="middle" class="mono">MCP transport</text>
+
+  <line x1="710" y1="426" x2="814" y2="426" stroke="#415A77" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="814" y1="448" x2="710" y2="448" stroke="#415A77" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="762" y="414" text-anchor="middle" class="mono">MCP transport</text>
+
+  <line x1="710" y1="536" x2="814" y2="536" stroke="#415A77" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="814" y1="558" x2="710" y2="558" stroke="#415A77" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="762" y="524" text-anchor="middle" class="mono">MCP transport</text>
+
+  <line x1="1086" y1="316" x2="1186" y2="316" stroke="#6B7C93" stroke-width="2.2" stroke-dasharray="7 7" marker-end="url(#arrowLight)"/>
+  <line x1="1186" y1="338" x2="1086" y2="338" stroke="#6B7C93" stroke-width="2.2" stroke-dasharray="7 7" marker-end="url(#arrowLight)"/>
+  <text x="1136" y="303" text-anchor="middle" class="small">native I/O or system API</text>
+
+  <line x1="1086" y1="426" x2="1186" y2="426" stroke="#6B7C93" stroke-width="2.2" stroke-dasharray="7 7" marker-end="url(#arrowLight)"/>
+  <line x1="1186" y1="448" x2="1086" y2="448" stroke="#6B7C93" stroke-width="2.2" stroke-dasharray="7 7" marker-end="url(#arrowLight)"/>
+  <text x="1136" y="413" text-anchor="middle" class="small">database driver or query layer</text>
+
+  <line x1="1086" y1="536" x2="1186" y2="536" stroke="#6B7C93" stroke-width="2.2" stroke-dasharray="7 7" marker-end="url(#arrowLight)"/>
+  <line x1="1186" y1="558" x2="1086" y2="558" stroke="#6B7C93" stroke-width="2.2" stroke-dasharray="7 7" marker-end="url(#arrowLight)"/>
+  <text x="1136" y="523" text-anchor="middle" class="small">HTTP, SDK, or service connector</text>
+
+  <text x="88" y="688" class="section">II. CORE PROTOCOL COMPONENTS</text>
+  <line x1="88" y1="702" x2="1510" y2="702" stroke="#D9E2EC" stroke-width="2"/>
+
+  <rect x="82" y="728" width="1436" height="288" rx="24" fill="url(#panelBg)" stroke="#D9E2EC" stroke-width="1.8"/>
+
+  <rect x="128" y="790" width="240" height="136" rx="22" fill="#FFFFFF" stroke="#B8ACD9" stroke-width="2"/>
+  <circle cx="248" cy="834" r="34" fill="#F3F0FF" stroke="#B8ACD9" stroke-width="1.8"/>
+  <path d="M230 834H266M248 816V852" stroke="#5A4E8C" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="248" y="888" text-anchor="middle" class="panelTitle">MCP Client</text>
+  <text x="248" y="912" text-anchor="middle" class="small">host-side protocol runtime</text>
+
+  <rect x="540" y="804" width="520" height="88" rx="22" fill="#FFFFFF" stroke="#A7B8CC" stroke-width="2"/>
+  <text x="800" y="840" text-anchor="middle" class="panelTitle">Transport Layer</text>
+  <text x="800" y="867" text-anchor="middle" class="small">bidirectional messaging over a negotiated communication channel</text>
+  <line x1="368" y1="848" x2="540" y2="848" stroke="#415A77" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <line x1="1060" y1="848" x2="1232" y2="848" stroke="#415A77" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <line x1="540" y1="868" x2="368" y2="868" stroke="#415A77" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <line x1="1232" y1="868" x2="1060" y2="868" stroke="#415A77" stroke-width="2.6" marker-end="url(#arrow)"/>
+
+  <rect x="1232" y="790" width="240" height="136" rx="22" fill="#FFFFFF" stroke="#C9B16E" stroke-width="2"/>
+  <rect x="1296" y="816" width="112" height="16" rx="8" fill="#F8F2E3"/>
+  <rect x="1296" y="840" width="112" height="16" rx="8" fill="#F8F2E3"/>
+  <rect x="1296" y="864" width="112" height="16" rx="8" fill="#F8F2E3"/>
+  <text x="1352" y="908" text-anchor="middle" class="panelTitle">MCP Server</text>
+  <text x="1352" y="932" text-anchor="middle" class="small">capability exposure layer</text>
+
+  <rect x="162" y="948" width="158" height="44" rx="14" fill="#FFFFFF" stroke="#B8ACD9" stroke-width="1.6"/>
+  <text x="241" y="976" text-anchor="middle" class="miniLabel">Notifications</text>
+  <rect x="334" y="948" width="138" height="44" rx="14" fill="#FFFFFF" stroke="#B8ACD9" stroke-width="1.6"/>
+  <text x="403" y="976" text-anchor="middle" class="miniLabel">Sampling</text>
+  <line x1="248" y1="926" x2="241" y2="948" stroke="#B8ACD9" stroke-width="1.6" stroke-dasharray="4 5"/>
+  <line x1="248" y1="926" x2="403" y2="948" stroke="#B8ACD9" stroke-width="1.6" stroke-dasharray="4 5"/>
+
+  <rect x="1162" y="948" width="112" height="44" rx="14" fill="#FFFFFF" stroke="#C9B16E" stroke-width="1.6"/>
+  <text x="1218" y="976" text-anchor="middle" class="miniLabel">Tools</text>
+  <rect x="1288" y="948" width="132" height="44" rx="14" fill="#FFFFFF" stroke="#C9B16E" stroke-width="1.6"/>
+  <text x="1354" y="976" text-anchor="middle" class="miniLabel">Resources</text>
+  <rect x="1434" y="948" width="112" height="44" rx="14" fill="#FFFFFF" stroke="#C9B16E" stroke-width="1.6"/>
+  <text x="1490" y="976" text-anchor="middle" class="miniLabel">Prompts</text>
+  <line x1="1352" y1="926" x2="1218" y2="948" stroke="#C9B16E" stroke-width="1.6" stroke-dasharray="4 5"/>
+  <line x1="1352" y1="926" x2="1354" y2="948" stroke="#C9B16E" stroke-width="1.6" stroke-dasharray="4 5"/>
+  <line x1="1352" y1="926" x2="1490" y2="948" stroke="#C9B16E" stroke-width="1.6" stroke-dasharray="4 5"/>
+
+  <text x="90" y="1060" class="caption">Figure 1. A more formal depiction of MCP emphasizes the separation between host applications, protocol mediation, capability exposure, and the execution environments ultimately reached through MCP servers.</text>
+</svg>
